@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Utilities.Tree.XVirtualTreeView" Collapsed="true">
+    <Position X="8.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAhAAQAAAAAAAAAAAAAAIACAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Tree\XVirtualTreeView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Tree.XTreeView" Collapsed="true">
+    <Position X="9.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAARAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Tree\XTreeView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Tree.AxTreeColumn" Collapsed="true">
+    <Position X="10.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tree\AxTreeColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Tree.AttributeColumn" Collapsed="true">
+    <Position X="10.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAoAgAAAAAAAAAAAAAAAAAAAIAIAAEQA=</HashCode>
+      <FileName>Tree\AttributeColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Tree.TreeGui" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QUAAEAAQADAAEAABAECAAAACAQAAIAAAQEBgEDAACAA=</HashCode>
+      <FileName>Tree\TreeGui.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Utilities.Editor.GUI.Editor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAQAAAACAAEAAAEECAAAACAQAAAAAAQEQAECAACAA=</HashCode>
+      <FileName>Editor\GUI\Editor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Utilities.Editor.StringField" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\StringField.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Utilities.Editor.User" Collapsed="true">
+    <Position X="3.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Utilities.Editor.IField" Collapsed="true">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\IField.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

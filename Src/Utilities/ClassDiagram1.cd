@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Tree System:&#xD;&#xA;&#xD;&#xA;Levels:&#xD;&#xA;&gt; Gui windows&#xD;&#xA;&gt; A tree view components&#xD;&#xA;&gt; A Tree View definition&#xD;&#xA;&gt; Columns for display in the tree">
+    <Position X="5.875" Y="2.365" Height="1.375" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Command System:&#xD;&#xA;&#xD;&#xA;&gt; A viewer Gui,&#xD;&#xA;&gt; a command history&#xD;&#xA;&gt; a doublly linked list of executed commands node,&#xD;&#xA;&gt; a set of command  nodes ">
+    <Position X="11.75" Y="1.25" Height="1.365" Width="1.7" />
+  </Comment>
+  <Comment CommentText="App Config &#xD;&#xA;&#xD;&#xA;handles configuration">
+    <Position X="16.292" Y="1.271" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Editor System&#xD;&#xA;&#xD;&#xA;User class takes an object serialises it to xml, then uses a set of attributes and controllers to build an editController Gui definition which is then displayed by an EditorWindow">
+    <Position X="1.406" Y="7.51" Height="1.719" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Custom Editor columns">
+    <Position X="9.706" Y="10.293" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Editor Definitions">
+    <Position X="3.378" Y="14.41" Height="0.485" Width="1.7" />
+  </Comment>
+  <Comment CommentText="A Set of extention classes to be reused anywhere">
+    <Position X="18.25" Y="1.25" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Interop Classes for Excel">
+    <Position X="20.747" Y="1.154" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Logger Stack - for logging info to the user&#xD;&#xA;TODO - ILogger class?">
+    <Position X="23.047" Y="1.098" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Save Load&#xD;&#xA;&#xD;&#xA; Allows saving and loading a cllass just by tagging it with an attribute">
+    <Position X="25.068" Y="1" Height="1.14" Width="1.518" />
+  </Comment>
+  <Comment CommentText="Re usable class for creating a heirarchy of nodes with names A_B_C">
+    <Position X="27.023" Y="1.241" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="IWindowing stack&#xD;&#xA;defines a set of IWindows for use - can be tagged to give the user more info.">
+    <Position X="14" Y="7" Height="0.75" Width="2.246" />
+  </Comment>
+  <Comment CommentText="Serialisation Controller">
+    <Position X="18.392" Y="6.909" Height="0.75" Width="1.7" />
+  </Comment>
+  <Class Name="Utilities.Tree.TreeGui" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QUAUEAAQADAAFAABEECAAIASAQAAIAAAUkBgEDAACAA=</HashCode>
+      <FileName>Tree\TreeGui.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Utilities.Tree.XVirtualTreeView" Collapsed="true">
+    <Position X="4.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAIYhAAQAAABAAAAAAAAACIgCEAAAQAAAAAAAAA=</HashCode>
+      <FileName>Tree\XVirtualTreeView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Tree.XTreeView" Collapsed="true">
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgQAAAIAgAAABAAIBAAQAQEAARAABAAARAAgAAAI=</HashCode>
+      <FileName>Tree\XTreeView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Tree.Columns.AttributeColumn" Collapsed="true">
+    <Position X="1.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAoAgAAAAAAAAAAAAAAAAAAAIAIAAEQA=</HashCode>
+      <FileName>Tree\Columns\AttributeColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Tree.Columns.ReadOnlyColumn" Collapsed="true">
+    <Position X="5.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tree\Columns\ReadOnlyColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Tree.Columns.AxTreeColumn" Collapsed="true">
+    <Position X="4.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAgAgAEAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Tree\Columns\AxTreeColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Tree.Columns.NodeNameColumn" Collapsed="true">
+    <Position X="7.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAgAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Tree\Columns\NodeNameColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Tree.Columns.ElementValueColumn" Collapsed="true">
+    <Position X="3.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAgAAAAAAAAAAEAAAAAEAAAAAAAAAEAA=</HashCode>
+      <FileName>Tree\Columns\ElementValueColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Tree.Selection.XSelectionScreen" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQgAgAAEADAAAk0AgFCAEAACASAAAQASEAAAACIACAA=</HashCode>
+      <FileName>Tree\Selection\XSelectionScreen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Utilities.Command.CommandHistory">
+    <Position X="10" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgBAQCAAAAAIABACAIAAAAIAACEAAAQAA=</HashCode>
+      <FileName>Command\CommandHistory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Command.CommandHistoryNode" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQEgAAABAAAAEAAAAAAAgAAAAAAAQA=</HashCode>
+      <FileName>Command\CommandHistoryNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Utilities.Command.HistoryViewer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQCAEBCAAiAAAAAAgECCAAGCAQEkAEBAEgAAACABiAA=</HashCode>
+      <FileName>Command\HistoryViewer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.158" />
+  </Class>
+  <Class Name="Utilities.Command.Commands.DelegateCommand" Collapsed="true">
+    <Position X="13.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAgAAQAAAAAAAQEAIAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Command\Commands\DelegateCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Utilities.Config.AppConfig">
+    <Position X="16.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAIACABAAEAAAAAIAAAABQAAAAQAIAAQAAAAA=</HashCode>
+      <FileName>Config\AppConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.User" Collapsed="true">
+    <Position X="3.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQEAEBAAAAAABAAAAAACAAICAIAAAAAAAAA=</HashCode>
+      <FileName>Editor\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.ReflectionExtensions" Collapsed="true">
+    <Position X="4.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.EditCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAMAAAABAgAAQAAAAEAAAEAIAgAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\EditCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Utilities.Editor.EditController" Collapsed="true">
+    <Position X="3.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAEACAAAAAAgAAAAQIAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Editor\EditController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.EditorIgnoreAttribute" Collapsed="true">
+    <Position X="5" Y="11.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\EditorIgnoreAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.ReadOnlyAttribute" Collapsed="true">
+    <Position X="5" Y="11" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\ReadOnlyAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.GUI.EditorWindow" Collapsed="true">
+    <Position X="3.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQgAQAAAACEAEAAAEECAEAQCAQAAAAAAUEAAFCAADEA=</HashCode>
+      <FileName>Editor\GUI\EditorWindow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Utilities.Editor.Editors.ValidatorAttribute" Collapsed="true">
+    <Position X="5" Y="13.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\Editors\ValidatorAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.Editors.AEditor" Collapsed="true">
+    <Position X="9.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAEgCAAgAAAAAAAAAAEAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Editor\Editors\AEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.Editors.AEditorAttribute" Collapsed="true">
+    <Position X="5.25" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\Editors\AEditorAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.Editors.ArrayEditorAttribute" Collapsed="true">
+    <Position X="5" Y="12.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAKAAAAAAAAAQEAAAAAAFAAKAAAAAgAAIIAAAAAAI=</HashCode>
+      <FileName>Editor\Editors\ArrayEditorAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.Editors.BooleanEditor" Collapsed="true">
+    <Position X="7.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAICAEIgAAAAABAAAAAACAAAAAAAAAAAICAAAAEAA=</HashCode>
+      <FileName>Editor\Editors\BooleanEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.Editors.BooleanEditorAttribute" Collapsed="true">
+    <Position X="0.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAIAAAAAAAAAAEAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\Editors\BooleanEditorAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.Editors.ButtonColumn" Collapsed="true">
+    <Position X="12" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACMAAgAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\Editors\ButtonColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.Editors.DoubleEditorAttribute" Collapsed="true">
+    <Position X="7.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAMAAAAAAAAAgAAACAAAAAAAAAgAAQAAAgACAAAAA=</HashCode>
+      <FileName>Editor\Editors\DoubleEditorAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.Editors.EditFieldCommand&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="9.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAABBAgAAQAACAAgAAEAIAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Editor\Editors\EditFieldCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Utilities.Editor.Editors.ExpressionEditorAttribute" Collapsed="true">
+    <Position X="3" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editor\Editors\ExpressionEditorAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.Editors.IntEditorAttribute" Collapsed="true">
+    <Position X="5.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAMAAAAAAAAAgAAACAAAAAAAAAgAAQAAAgACAAAAA=</HashCode>
+      <FileName>Editor\Editors\IntEditorAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.Editors.StringEditorAttribute" Collapsed="true">
+    <Position X="9.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAECAABAAAAAAAAAAAAAABgAAAAA=</HashCode>
+      <FileName>Editor\Editors\StringEditorAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.Editors.UniversalEditor&lt;T&gt;" Collapsed="true">
+    <Position X="9.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAICAAQgAAAAAAAAAAAAAAAAAgQAAAAAAACAAAIAA=</HashCode>
+      <FileName>Editor\Editors\UniversalEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Editor.GUI.Windows.InputBox" Collapsed="true">
+    <Position X="1.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAECIAAAkAAACAAAQCAAAAAAAAgAAAABAAAEA=</HashCode>
+      <FileName>Editor\GUI\Windows\InputBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Extensions.ArrayExtensions" Collapsed="true">
+    <Position X="18.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\ArrayExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Extensions.XElementExtensions" Collapsed="true">
+    <Position X="18.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAFAAAAAAAAAAAAGAAAAAEAgAAAAAAAA=</HashCode>
+      <FileName>Extensions\XElementExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Extensions.DictionaryExtensions" Collapsed="true">
+    <Position X="18.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAACAABAAAAAAAAAFAAAAIAAAQAAAAAgAAAEAAA=</HashCode>
+      <FileName>Extensions\DictionaryExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Extensions.ListExtentions" Collapsed="true">
+    <Position X="18.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAACA=</HashCode>
+      <FileName>Extensions\ListExtentions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Extensions.StringExtensions" Collapsed="true">
+    <Position X="18.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\StringExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Interop.Excel.ExcelFile" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAqAACABAgAAAAQIACAAACAAAAQAAiAAAADAAAg=</HashCode>
+      <FileName>Interop\Excel\ExcelFile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Utilities.Loggers.GUI.LogWindow" Collapsed="true">
+    <Position X="23" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQgAAAAAACAAAAAAAECAAgACAQAAAACAEAAAECAACAA=</HashCode>
+      <FileName>Loggers\GUI\LogWindow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Utilities.Loggers.FileLogger" Collapsed="true">
+    <Position X="23" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Loggers\FileLogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Loggers.Logger" Collapsed="true">
+    <Position X="23" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAACBgACAAAAABAAAAAAAAAjAAAAAQAAADQAAAAA=</HashCode>
+      <FileName>Loggers\Logger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.SaveLoad.SaveLoad" Collapsed="true">
+    <Position X="25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEgAgIAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>SaveLoad\SaveLoad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.SaveLoad.FileTypeAttribute" Collapsed="true">
+    <Position X="25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAEAAAAAAAACAAAAAABAAAAAAAQAEAAAAAAg=</HashCode>
+      <FileName>SaveLoad\FileTypeAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.TreeMaker.TreeMaker" Collapsed="true">
+    <Position X="27" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAEAAAAAAAAAACAAQAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>TreeMaker\TreeMaker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Windowing.WindowAttribute" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="10.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAEAAAAAQAAAAgAAAAAA=</HashCode>
+      <FileName>Windowing\WindowAttribute.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Utilities.Windowing.ObjectDictionaryExtensions" Collapsed="true">
+    <Position X="13.75" Y="11" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Windowing\IWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Windowing.WindowController" Collapsed="true">
+    <Position X="13.75" Y="9.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AACAkAAAAAAAEAAAAAAAAIAAAAAQAAAAAAAAAEAAgAQ=</HashCode>
+      <FileName>Windowing\WindowController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Windowing.TextViewer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAiCAAAAAAECAAABCAQAAAAAAEAAAACAACAA=</HashCode>
+      <FileName>Windowing\TextViewer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Utilities.XmlSerialisation.SerialisationController">
+    <Position X="18.25" Y="8" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAQAAAACAAAAAAAAQAACBAAAAAAAAAgAAAAIA=</HashCode>
+      <FileName>XmlSerialisation\SerialisationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Utilities.Interop.Excel.ExcelAddress" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAIBEAAAAAAAIhAAAAIBAAAAAAAAAABA=</HashCode>
+      <FileName>Interop\Excel\ExcelAddress.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="Utilities.Interop.Excel.CellName" Collapsed="true">
+    <Position X="20.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAABgAAAAAAAAAgAAAAAAAgQQAAA=</HashCode>
+      <FileName>Interop\Excel\ExcelCell.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="Utilities.Command.ICommand">
+    <Position X="11.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAEAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\ICommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Utilities.SaveLoad.ISaveLoad" Collapsed="true">
+    <Position X="25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>SaveLoad\ISaveLoad.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Utilities.Windowing.IWindowAttribute" Collapsed="true">
+    <Position X="13.75" Y="8.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAEAAAAAQAAAAgAAAAAA=</HashCode>
+      <FileName>Windowing\IWindowAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Utilities.Windowing.IWindow" Collapsed="true">
+    <Position X="13.75" Y="8" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAEAAAAAAAQAAAAAAEAAAACAACAA=</HashCode>
+      <FileName>Windowing\IWindow.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Utilities.Loggers.LogLevel" Collapsed="true">
+    <Position X="23" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAACBgAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Loggers\Logger.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Utilities.SaveLoad.SerializationType" Collapsed="true">
+    <Position X="25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SaveLoad\FileTypeAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

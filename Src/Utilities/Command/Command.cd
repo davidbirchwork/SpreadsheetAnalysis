@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Project.Commands.Command_Container" BaseTypeListCollapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAwAAQEAAAAgAAEAIAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\Command_Container.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Project.Commands.ViewHistory" Collapsed="true">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAACAAAAgAgACAAACKIAAABAAAgEAAAAAAAAA=</HashCode>
+      <FileName>Command\ViewHistory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities.Command.CommandHistory">
+    <Position X="4.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAQAAAAAAIQBAAAAAAAAAARAAIAAQAA=</HashCode>
+      <FileName>Command\CommandHistory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Utilities.Command.ICommand">
+    <Position X="3" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAQAAAAAAAAEAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command\ICommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17736F19-8A8E-4638-A47B-A2AD9A2B438E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExcelExtractor</RootNamespace>
+    <AssemblyName>ExcelExtractor</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analyses\Graph\ExcelGraph.cs" />
+    <Compile Include="Analyses\Graph\ExtractEvalGraph.cs" />
+    <Compile Include="Analyses\Graph\ExtractGraphTables.cs" />
+    <Compile Include="Analyses\Graph\ExtractRefGraph.cs" />
+    <Compile Include="Analyses\Graph\ExtractGraphComponents.cs" />
+    <Compile Include="Analyses\Graph\ExtractWholeGraph.cs" />
+    <Compile Include="Analyses\Graph\GraphMlUtilities.cs" />
+    <Compile Include="Analyses\Graph\GraphMlUtilities_Old.cs" />
+    <Compile Include="Analyses\SAGeneration.cs" />
+    <Compile Include="CellMap.cs" />
+    <Compile Include="Domain\CellReference.cs" />
+    <Compile Include="Domain\ExcelEqualityComparison.cs" />
+    <Compile Include="Domain\ExcelFormula.cs" />
+    <Compile Include="Domain\ExtractedCell.cs" />
+    <Compile Include="Domain\Extractor.cs" />
+    <Compile Include="Domain\FunctionExtractor.cs" />
+    <Compile Include="Domain\ExtractionResults.cs" />
+    <Compile Include="Domain\Todo.cs" />
+    <Compile Include="ExtractionController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Algorithms\Algorithms.csproj">
+      <Project>{482db2e1-8dc1-40ac-89eb-7d1e178defa1}</Project>
+      <Name>Algorithms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Excel_Interop\Excel_Interop.csproj">
+      <Project>{eaaa4e34-a742-4f84-a40d-dcec57f609e9}</Project>
+      <Name>Excel_Interop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LinqExtensions\LinqExtensions.csproj">
+      <Project>{36242045-5e6f-40db-a451-69d981ae72d6}</Project>
+      <Name>LinqExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NCalc_Excel\Evaluant.Calculator\NCalcExcel.csproj">
+      <Project>{5f014003-50d8-49e0-8afe-91d38dccc97c}</Project>
+      <Name>NCalcExcel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

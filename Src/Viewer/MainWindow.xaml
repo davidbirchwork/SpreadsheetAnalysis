@@ -1,0 +1,41 @@
+﻿<Window x:Class="HyperGraphViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="HyperGraph Viewer" Height="450" Width="800" WindowStartupLocation="CenterOwner" WindowState="Maximized" Name="Viewer">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Menu IsMainMenu="True" Height="20" VerticalAlignment="Top" Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Header="Parse Spreadsheet" Click="ParseClick" />
+                <MenuItem Header="Load GraphML" Click="OpenClick" />
+            </MenuItem>
+        </Menu>
+        
+            <TabControl Grid.Row="1" Name="TabControl">
+                <TabItem Header="Graph" Name="GraphTab">
+                    <Grid Background="#FFE5E5E5">
+                        <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="Panel">
+                        </DockPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Hyper Graph" Name="HyperGraphTab">
+                    <Grid Background="#FFFFFF">
+                        <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="HyperPanel">
+                        </DockPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Logs" Name="LogTab">
+                    <Grid Background="#FFE5E5E5">
+                        <TextBox Name="LogBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >Log messages will appear here</TextBox>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        
+    </Grid>
+</Window>

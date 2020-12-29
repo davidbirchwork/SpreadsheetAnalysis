@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{ADBA3904-8371-43E5-8243-1524D824D5DA}</ProjectGuid>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyTitle>Excel_Interop_ClosedXML</AssemblyTitle>
+    <Company>Imperial College London</Company>
+    <Product>Excel_Interop_ClosedXML</Product>
+    <Copyright>Copyright © David Birch</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.94.2" />
+    <PackageReference Include="Log4Net" Version="2.0.8" />
+    <ProjectReference Include="..\Excel_Interop\Excel_Interop.csproj" />
+  </ItemGroup>
+</Project>

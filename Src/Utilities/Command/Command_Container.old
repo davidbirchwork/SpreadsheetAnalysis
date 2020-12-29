@@ -1,0 +1,88 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Utilities.Command;
+
+namespace Project.Commands {
+    /// <summary>
+    /// Encapsulates a series of commands - mainly by holding a set of undo commands along with a referacne to the origonal command
+    /// </summary>
+    [Serializable]
+    internal class Command_Container : ICommand {
+
+        private ICommand undoCommand;
+        private string _description;
+        private List<ICommand> doCommands;
+
+        #region ctors
+
+        /// <summary>
+        /// NEVER CALL THIS!!!
+        /// </summary>
+        public Command_Container() { 
+        }
+
+        /// <summary>
+        /// Contains a set of commands that act as the undo command of a command
+        /// </summary>        
+        /// <param name="undoCommand">the command that is being undone</param>
+        /// <param name="description">description of the undo process</param>
+        /// <param name="doCommands">the set of undo commands</param>
+        public Command_Container(ICommand undoCommand, string description, params ICommand[] doCommands) {            
+            this._description = description;
+            this.undoCommand = undoCommand;
+            this.doCommands = new List<ICommand>(doCommands);
+        }        
+
+        #endregion
+
+        #region ICommand Members                
+
+        /// <summary>
+        /// Exec's do Command
+        /// </summary>
+        /// <returns>success</returns>
+        public bool Execute() {
+            bool res = true;
+            foreach ( ICommand subCommand in this.doCommands ) {
+                res = res && subCommand.Execute();
+            }
+            return res;
+        }
+
+        public ICommand GetUndoCommand() {
+            return this.undoCommand;
+        }
+
+        public bool ExecuteUndo() {
+            return this.undoCommand.Execute();
+        }
+
+        public string Description() { // extend this description?
+            return "Container:{"+this._description+"}:";
+        }
+
+        /// <summary>
+        /// Returns a command which will Undo this command
+        /// </summary>
+        /// <returns>Undo Command</returns>
+        public ICommand UndoCommand {
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether this instance is undoable.
+        /// </summary>
+        /// <value>
+        /// 	<c>true</c> if this instance is undoable; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsUndoable {
+            get { throw new NotImplementedException(); }
+        }
+
+        #endregion
+
+    }
+}

@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B4075BEB-5435-401C-B075-EB0035497684}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Utilities</RootNamespace>
+    <AssemblyName>Utilities</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infralution.Common, Version=3.15.2.0, Culture=neutral, PublicKeyToken=3e7e8e3744a5c13f, processorArchitecture=MSIL" />
+    <Reference Include="Infralution.Controls, Version=3.15.2.0, Culture=neutral, PublicKeyToken=3e7e8e3744a5c13f, processorArchitecture=MSIL" />
+    <Reference Include="Infralution.Controls.VirtualTree, Version=3.15.2.0, Culture=neutral, PublicKeyToken=3e7e8e3744a5c13f, processorArchitecture=MSIL" />
+    <Reference Include="Infralution.RichText, Version=3.15.2.0, Culture=neutral, PublicKeyToken=3e7e8e3744a5c13f, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.Excel\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Command\CommandHistory.cs" />
+    <Compile Include="Command\CommandHistoryNode.cs" />
+    <Compile Include="Command\Commands\DelegateCommand.cs" />
+    <Compile Include="Designs\IDesign.cs" />
+    <Compile Include="Designs\PB\PBDesign.cs" />
+    <Compile Include="Editor\Editors\Controllers\AElementController.cs" />
+    <Compile Include="Editor\ReadOnlyClassAttribute.cs" />
+    <Compile Include="Editor\EditCommand.cs" />
+    <Compile Include="Editor\EditController.cs" />
+    <Compile Include="Editor\EditorIgnoreAttribute.cs" />
+    <Compile Include="Editor\Editors\AEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editor\Editors\AEditorAttribute.cs" />
+    <Compile Include="Editor\Editors\ArrayEditorAttribute.cs" />
+    <Compile Include="Editor\Editors\BooleanEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editor\Editors\BooleanEditorAttribute.cs" />
+    <Compile Include="Editor\Editors\DoubleEditorAttribute.cs" />
+    <Compile Include="Editor\Editors\EditFieldCommand.cs" />
+    <Compile Include="Editor\Editors\IntEditorAttribute.cs" />
+    <Compile Include="Editor\Editors\StringEditorAttribute.cs" />
+    <Compile Include="Editor\Editors\UniversalEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editor\Editors\ValidatorAttribute.cs" />
+    <Compile Include="Editor\GUI\EditorWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\GUI\EditorWindow.Designer.cs">
+      <DependentUpon>EditorWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\GUI\TestClass.cs" />
+    <Compile Include="Editor\Editors\Controllers\ArrayController.cs" />
+    <Compile Include="Editor\GUI\Windows\InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\GUI\Windows\InputBox.Designer.cs">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\ReadOnlyAttribute.cs" />
+    <Compile Include="Editor\User.cs" />
+    <Compile Include="Loggers\ParallelFileLogger.cs" />
+    <Compile Include="Loggers\LoggingConfig.cs" />
+    <Compile Include="Loggers\LogMessage.cs" />
+    <Compile Include="SaveLoad\FileTypeAttribute.cs" />
+    <Compile Include="SaveLoad\ISaveLoad.cs" />
+    <Compile Include="SaveLoad\SaveLoad.cs" />
+    <Compile Include="SaveLoad\SaveLoadExtentions.cs" />
+    <Compile Include="SystemUtil\FileSystem.cs" />
+    <Compile Include="SystemUtil\Shell.cs" />
+    <Compile Include="Loggers\Timing\EventTimer.cs" />
+    <Compile Include="TreeMaker\TreeMaker.cs" />
+    <Compile Include="Tree\Columns\AttributeColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\Columns\AxTreeColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editor\Editors\ButtonColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\Columns\ElementValueColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\Columns\NodeNameColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\Columns\NodeValueColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\Columns\ReadOnlyColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editor\Selection\XSelectionScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Selection\XSelectionScreen.Designer.cs">
+      <DependentUpon>XSelectionScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\TreeGui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tree\TreeGui.Designer.cs">
+      <DependentUpon>TreeGui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\XTreeView.cs" />
+    <Compile Include="Tree\XVirtualTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserConfig\ConfigAttribute.cs" />
+    <Compile Include="UserConfig\IConfigFile.cs" />
+    <Compile Include="UserConfig\UserConfig.cs" />
+    <Compile Include="Editor\Xml\XmlEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\Xml\XmlEditor.Designer.cs">
+      <DependentUpon>XmlEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windowing\IWindowAttribute.cs" />
+    <Compile Include="Windowing\TextViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windowing\TextViewer.Designer.cs">
+      <DependentUpon>TextViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windowing\WindowAttribute.cs" />
+    <Compile Include="Windowing\WindowController.cs" />
+    <Compile Include="XmlSerialisation\SerialisationController.cs" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Command\Command_Container.old" />
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Command\HistoryViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\HistoryViewer.designer.cs">
+      <DependentUpon>HistoryViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config\AppConfig.cs" />
+    <Compile Include="Loggers\FileLogger.cs" />
+    <Compile Include="Loggers\GUI\LogWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loggers\GUI\LogWindow.Designer.cs">
+      <DependentUpon>LogWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loggers\Logger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windowing\IWindow.cs" />
+    <None Include="Designs\PB\DesignFiles\12.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\128.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\1280.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\16.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\20.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\24.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\28.ERROR" />
+    <None Include="Designs\PB\DesignFiles\32.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\320.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\36.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\4.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\40.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\44.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\48.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\60.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\64.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\640.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\68.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\72.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\8.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\80.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\84.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\96.PB">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Designs\PB\DesignFiles\possible_hadamard_matrixes.xlsx" />
+    <None Include="Editor\ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Command\HistoryViewer.resx">
+      <DependentUpon>HistoryViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\GUI\EditorWindow.resx">
+      <DependentUpon>EditorWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\GUI\Windows\InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loggers\GUI\LogWindow.resx">
+      <DependentUpon>LogWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Editor\Selection\XSelectionScreen.resx">
+      <DependentUpon>XSelectionScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tree\TreeGui.resx">
+      <DependentUpon>TreeGui.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\Xml\XmlEditor.resx">
+      <DependentUpon>XmlEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windowing\TextViewer.resx">
+      <DependentUpon>TextViewer.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Command\Command.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Designs\PB\DesignFiles\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinqExtensions\LinqExtensions.csproj">
+      <Project>{36242045-5e6f-40db-a451-69d981ae72d6}</Project>
+      <Name>LinqExtensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

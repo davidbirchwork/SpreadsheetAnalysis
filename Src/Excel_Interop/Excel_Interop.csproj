@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{EAAA4E34-A742-4F84-A40D-DCEC57F609E9}</ProjectGuid>
+    <RootNamespace>ExcelInterop</RootNamespace>
+    <AssemblyName>ExcelInterop</AssemblyName>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyTitle>ExcelInterop</AssemblyTitle>
+    <Company>Imperial College London</Company>
+    <Product>ExcelInterop</Product>
+    <Copyright>Copyright © David Birch</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Log4Net" Version="2.0.8" />
+    <PackageReference Include="Newtonsoft.json" Version="12.0.3" />
+  </ItemGroup>
+</Project>

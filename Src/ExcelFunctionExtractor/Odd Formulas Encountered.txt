@@ -1,0 +1,34 @@
+Odd formulas encountered:
+
+DEALT WITH: 
+
+double , - an empty argument!
+
+=(((SUM(SS_ES!L14,SS_ES!L19,SS_ES!L24, SS_ES!L39,SS_ES!L44,SS_ES!L49,SS_ES!L54,,SS_ES!L75,SS_ES!L82,SS_ES!L87)+SUM(SS_ES!L15,SS_ES!L20,SS_ES!L25,SS_ES!L40,SS_ES!L45,SS_ES!L50,SS_ES!L55,SS_ES!L76,SS_ES!L88))*SS.BE_ES.BuildingEnergyDemand.Electrical.TotalResidential/SS.BE_ES.BuildingEnergyDemand.Electrical.TotalBUILDINGS
+
+apparently you can have A1++A2 and thats fine...
+
+=(((SUM(SS_ES!L14,SS_ES!L19,SS_ES!L24, SS_ES!L39,SS_ES!L44,SS_ES!L49,SS_ES!L54,,SS_ES!L75,SS_ES!L82,SS_ES!L87)++SUM(SS_ES!L15,SS_ES!L20,SS_ES!L25,SS_ES!L40,SS_ES!L45,SS_ES!L50,SS_ES!L55,SS_ES!L76,SS_ES!L88))*(SS.BE_ES.BuildingEnergyDemand.Electrical.TotalBUILDINGS-SS.BE_ES.BuildingEnergyDemand.Electrical.TotalResidential)/SS.BE_ES.BuildingEnergyDemand.Electrical.TotalBUILDINGS
++SUM(SS_ES!L31,SS_ES!L32,SS_ES!L60,SS_ES!L61,SS_ES!L62,SS_ES!L63,SS_ES!L64,SS_ES!L87)*(SS.BE_ES.BuildingEnergyDemand.DirectThermal.TotalBUILDINGS-SS.BE_ES.BuildingEnergyDemand.DirectThermal.TotalResidential)/SS.BE_ES.BuildingEnergyDemand.DirectThermal.TotalBUILDINGS
++SUM(SS_ES!L68,SS_ES!L69,SS_ES!L71,SS_ES!L87)*(SS.BE_ES.BuildingEnergyDemand.DirectCooling.TotalBUILDINGS-SS.BE_ES.BuildingEnergyDemand.DirectCooling.TotalResidential)/SS.BE_ES.BuildingEnergyDemand.DirectCooling.TotalBUILDINGS)
+/1000)/SS.SE.TotalPopulation
+
+
+=(((SUM(SS_ES!L14,SS_ES!L19,SS_ES!L24, SS_ES!L39,SS_ES!L44,SS_ES!L49,SS_ES!L54,,SS_ES!L75,SS_ES!L82,SS_ES!L87)++SUM(SS_ES!L15,SS_ES!L20,SS_ES!L25,SS_ES!L40,SS_ES!L45,SS_ES!L50,SS_ES!L55,SS_ES!L76,SS_ES!L88))*(SS.BE_ES.BuildingEnergyDemand.Electrical.TotalBUILDINGS-SS.BE_ES.BuildingEnergyDemand.Electrical.TotalResidential)/SS.BE_ES.BuildingEnergyDemand.Electrical.TotalBUILDINGS
++SUM(SS_ES!L31,SS_ES!L32,SS_ES!L60,SS_ES!L61,SS_ES!L62,SS_ES!L63,SS_ES!L64,SS_ES!L87)*(SS.BE_ES.BuildingEnergyDemand.DirectThermal.TotalBUILDINGS-SS.BE_ES.BuildingEnergyDemand.DirectThermal.TotalResidential)/SS.BE_ES.BuildingEnergyDemand.DirectThermal.TotalBUILDINGS
++SUM(SS_ES!L68,SS_ES!L69,SS_ES!L71,SS_ES!L87)*(SS.BE_ES.BuildingEnergyDemand.DirectCooling.TotalBUILDINGS-SS.BE_ES.BuildingEnergyDemand.DirectCooling.TotalResidential)/SS.BE_ES.BuildingEnergyDemand.DirectCooling.TotalBUILDINGS)
+/1000)/SS.SE.TotalPopulation
+
+BLANK FORMULAS!
+
+IF and TYPE:
+
+=IF(TYPE($G89)=1,$G89*ESCo.Waste.Combustion.CO2,0)
+
+Double quotes?
+
+IF(TYPE($G$43)=1,$G$43*(C46/$C$43),"")
+IF(TYPE($G$43)=1,$G$43*(C46/$C$43),"")
+
+TO DEAL WITH:
+

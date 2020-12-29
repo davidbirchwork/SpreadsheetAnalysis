@@ -1,0 +1,51 @@
+﻿<Window x:Class="GraphViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="900" Width="1600" xmlns:my="clr-namespace:GraphGUI.GUI.WPF;assembly=GraphGUI" WindowStartupLocation="CenterScreen"  x:Name="root">
+    <Grid>
+        <Menu IsMainMenu="True">
+            <MenuItem Header="File">
+
+                <MenuItem Header="Load" Click="OpenClick" />
+                <MenuItem Header="Load Hidden" Click="OpenHiddenClick" />
+           
+                <MenuItem Header="Calculate Metrics" Click="CalculateMetricsClick" />
+                <MenuItem Header="Find Abstractions" Click="CalculateAbstractions" />
+                <MenuItem Header="Find All Abstractions" Click="CalculateAllAbstractions" />
+                <MenuItem Header="View Abstraction" Click="MenuItemClick" />
+
+                <MenuItem Header="Exit" Click="CloseClick" />
+
+            </MenuItem>
+        </Menu>
+        <Grid Margin="0,20,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>            
+            <my:Viewer Name="viewer1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Height="auto" Width="auto"/>
+
+            <GridSplitter HorizontalAlignment="Right" 
+                  VerticalAlignment="Stretch" 
+                  Grid.Column="1" ResizeBehavior="PreviousAndNext"
+                  Width="3" Background="#FFBCBCBC" Grid.RowSpan="3"/>
+
+            <TextBox  Name="metricsBox"  Text="Metrics will appear here" 
+                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                      Grid.Row="1" Grid.Column="2"  Height="auto" 
+                      VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" TextWrapping="Wrap" />
+            <TextBox  Name="logBox"  Text="Log Messages Will Appear Here!" 
+                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                      Grid.Row="2" Grid.Column="2"  Height="auto" 
+                      VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" />
+            <ListBox Grid.Column="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="MetricsList" SelectionMode="Multiple" 
+                     ItemsSource="{Binding ElementName=root, Path=ComputedMetricsNames, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" SelectionChanged="MetricsListSelectionChanged" />
+        </Grid>
+    </Grid>
+</Window>

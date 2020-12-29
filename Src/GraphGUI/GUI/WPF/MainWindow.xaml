@@ -1,0 +1,197 @@
+﻿<UserControl  x:Class="GraphGUI.GUI.WPF.Viewer"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+			  xmlns:zoom="clr-namespace:WPFExtensions.Controls;assembly=WPFExtensions" 
+		xmlns:Windows="clr-namespace:System.Windows;assembly=PresentationFramework" 
+				xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=PresentationFramework" 
+				xmlns:Data="clr-namespace:System.Windows.Data;assembly=PresentationFramework" 
+				xmlns:Media="clr-namespace:System.Windows.Media;assembly=PresentationCore" 
+			  xmlns:Compound="clr-namespace:GraphGUI.Compound"
+        xmlns:Controls1="clr-namespace:GraphSharp.Controls;assembly=GraphSharp.Controls"
+			  xmlns:graph="clr-namespace:Graph;assembly=Graph"
+              xmlns:graphgui="clr-namespace:GraphGUI;assembly=GraphGUI"
+			  xmlns:compound="clr-namespace:Graph.Compound;assembly=Graph"
+			  xmlns:ColourGraphVertexes="clr-namespace:GraphGUI.Compound.ColourGraph"
+			  x:Name="root"
+			  HorizontalAlignment="Stretch"
+			  VerticalAlignment="Stretch"
+			  Width="auto"
+			  Height="auto"
+			  MinWidth="150" MinHeight="150"
+		>
+	<UserControl.Resources>
+		
+			<Windows:DataTemplate DataType="{x:Type ColourGraphVertexes:InnerColourGraphVertex}">
+			<!-- here goes my vertex representation of a coloured inner vertex,  -->
+			<Controls:Border Name="vertexPanel"
+					Margin="2"
+					Padding="4"
+					CornerRadius="10, 10, 10, 10"
+					BorderThickness="2"
+					BorderBrush="#FFA500">
+					<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="1*" />
+						<RowDefinition Height="1*" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+					<Controls:TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Calibri"
+										Text="{Data:Binding Path=Caption,Mode=OneWay}" TextAlignment="Center" 
+										Background="{Data:Binding Path=Colour,Mode=OneWay}"
+										FontSize="{Data:Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=InnerNodeFontSize, Mode=OneWay}"                                        
+										MouseDown="InnerVertexMouseDown" />
+					<Controls:TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Calibri"
+										Text="{Data:Binding Path=Value,Mode=OneWay}" TextAlignment="Center"
+										Background="{Data:Binding Path=Colour,Mode=OneWay}"
+										FontSize="{Data:Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}},
+										Path=InnerNodeValueFontSize, Mode=OneWay}"  
+										MouseDown="InnerVertexMouseDown"/>
+				  <!--      
+					<Grid Grid.Row="1" Grid.Column="1">
+						<Grid.RowDefinitions>
+							<RowDefinition />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+
+						<ProgressBar Grid.Column="0" Width="auto" Height="auto" Minimum="0" Maximum="100" FlowDirection="LeftToRight" Orientation="Vertical" Value="{Data:Binding Path=Value1,Mode=OneWay}"/>
+						<ProgressBar Grid.Column="1" Width="auto" Height="auto" Minimum="0" Maximum="100" FlowDirection="LeftToRight" Orientation="Vertical" Value="{Data:Binding Path=Value2,Mode=OneWay}"/>
+						<ProgressBar Grid.Column="2" Width="auto" Height="auto" Minimum="0" Maximum="100" FlowDirection="LeftToRight" Orientation="Vertical" Value="{Data:Binding Path=Value3,Mode=OneWay}"/>
+						<ProgressBar Grid.Column="3" Width="auto" Height="auto" Minimum="0" Maximum="100" FlowDirection="LeftToRight" Orientation="Vertical" Value="{Data:Binding Path=Value4,Mode=OneWay}"/>
+						<ProgressBar Grid.Column="4" Width="auto" Height="auto" Minimum="0" Maximum="100" FlowDirection="LeftToRight" Orientation="Vertical" Value="{Data:Binding Path=Value5,Mode=OneWay}"/>
+					</Grid> -->
+						
+				</Grid>           
+
+			</Controls:Border>
+		</Windows:DataTemplate>
+
+		<Windows:DataTemplate DataType="{x:Type graph:ExcelVertex}">
+			<!-- here goes my vertex representation -->
+			<Controls:Border Name="vertexPanel"
+					Margin="2"
+					Padding="4"
+					CornerRadius="5, 5, 5, 5"
+					BorderThickness="2"
+					BorderBrush="Black">
+
+				<Controls:TextBlock Text="{Data:Binding Path=Caption,Mode=OneWay}" TextAlignment="Center" Background="{Data:Binding Path=Colour,Mode=OneWay}"
+						   FontSize="{Data:Binding Path=HighlightFontSize,Mode=OneWay}" MouseDown="TextBlockMouseDown" />
+
+			</Controls:Border>
+		</Windows:DataTemplate>
+
+       <!-- <Style TargetType="{x:Type Controls1:EdgeControl}">
+            <Setter Property="StrokeThickness" Value="50" ></Setter>
+        </Style>-->
+
+        <!-- define with a data template how to show your vertex class-->
+		<Windows:DataTemplate DataType="{x:Type compound:CompoundVertex}">
+			<!-- here goes my vertex representation -->
+			<Controls:Border Name="vertexPanel"
+					Margin="2"
+					Padding="4"
+					CornerRadius="5, 5, 5, 5"
+					BorderThickness="2"
+					BorderBrush="Black">                     
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="1*" />
+						<RowDefinition Height="3.5*" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+					</Grid.ColumnDefinitions>
+					<Controls:TextBlock Grid.Column="0" Grid.Row="0" Text="{Data:Binding Path=Caption,Mode=OneWay}" TextAlignment="Center" Background="{Data:Binding Path=Colour,Mode=OneWay}"
+						   FontSize="{Data:Binding Path=HighlightFontSize,Mode=OneWay}" MouseDown="TextBlockMouseDown" />
+					<Controls:Border CornerRadius="5"
+									BorderBrush="#FF393939"
+									BorderThickness="4"
+									Grid.Column="0" Grid.Row="1"  
+									  Width="{Data:Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=InnerGraphWidth, Mode=OneWay}" 
+									 Height="{Data:Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=InnerGraphHeight, Mode=OneWay}">
+						<!-- <zoom:ZoomControl x:Name="innerzoomer">  -->
+						<graph:AGraphLayout x:Name="innergraphLayout"  
+											AnimationDisablerEdgeCount="1"
+											AnimationDisablerVertexCount="1"
+											AnimationLength="0"
+											IsAnimationEnabled="False"
+											Width ="{Data:Binding  RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}} , Path=InnerGraphWidthInternal, Mode=OneWay}" 
+											Height="{Data:Binding  RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}} , Path=InnerGraphHeightInternal, Mode=OneWay}"
+															Graph="{Data:Binding Path=InnerGraph}"					
+															LayoutAlgorithmType="EfficientSugiyama"											
+											OverlapRemovalAlgorithmType="FSA"
+											HighlightAlgorithmType="Simple" 
+																  LayoutMode="Simple"                                            >
+                            
+                        </graph:AGraphLayout>
+						<!--     </zoom:ZoomControl> -->
+					</Controls:Border>
+				</Grid>
+
+			</Controls:Border>
+
+		</Windows:DataTemplate>
+
+
+
+		<Windows:DataTemplate x:Key="ColourMappingTemplate">
+			<!-- we bind to a tuple of name, colour-->
+			<Controls:Label FontSize="12" FontWeight="Bold" Margin="2,2,2,2" Content="{Data:Binding Path=Item1, FallbackValue=NoName}">
+				<Controls:Label.Background>
+					<Media:SolidColorBrush Color="{Data:Binding Path=Item2}"/>
+				</Controls:Label.Background>
+			</Controls:Label>
+		</Windows:DataTemplate>
+	</UserControl.Resources>
+	<Controls:Grid Height="auto" Width="auto"  MinWidth="150" MinHeight="150" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition  />
+		</Grid.ColumnDefinitions>
+		<Controls:Grid.RowDefinitions>
+			<Controls:RowDefinition Height="5*" />
+			<Controls:RowDefinition Height="1*"/>
+		</Controls:Grid.RowDefinitions>
+		<Controls:TextBox Controls:Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="5,4,0,0" x:Name="ZoomContent" VerticalAlignment="Top" Width="135" />
+		<Controls:Border CornerRadius="20" HorizontalAlignment="Center"
+									BorderBrush="#FF393939"
+									BorderThickness="10"
+									Grid.Column="0" Grid.Row="0"
+						  MinWidth="150" MinHeight="150"
+						 Width="auto" Height="auto">
+			<zoom:ZoomControl  x:Name="zoomer" >
+				<!-- <Graph:AGraphLayout x:Name="graphLayout"  this is now autoloaded depending upon graph type
+									Graph="{Data:Binding }"  
+									LayoutAlgorithmType="Round"											
+									OverlapRemovalAlgorithmType="FSA"
+									HighlightAlgorithmType="Simple" />-->
+			</zoom:ZoomControl>
+		</Controls:Border>
+		<Controls:ListBox Controls:Grid.Row="1" x:Name="ColouringList" HorizontalAlignment="Left" 
+				ItemsSource="{Data:Binding  ElementName=root,Path=ColourMapping}"				
+				Controls:DockPanel.Dock="Right" 
+				ItemTemplate="{DynamicResource ColourMappingTemplate}"
+				MaxWidth="300" MinWidth="150" Margin="309,22,0,14" />
+		<Controls:CheckBox x:Name="ckbxDirection" Controls:Grid.Row="1"  HorizontalAlignment="Left" Margin="146,22,0,0"  VerticalAlignment="Top" Width="157" Checked="DirectionChanged" Unchecked="DirectionChanged">Top Down: </Controls:CheckBox>
+		<Controls:ListBox Controls:Grid.Row="1" Height="105" HorizontalAlignment="Left" Margin="146,44,0,0" x:Name="LayoutSelector" VerticalAlignment="Stretch" Width="157" SelectionChanged="LayoutSelectorSelectionChanged"  ItemsSource="{Data:Binding  ElementName=root,Path=LayoutAlgorithms}" />
+		<Controls:ListBox Controls:Grid.Row="1" Height="104" HorizontalAlignment="Left" Margin="643,22,0,0" x:Name="RefersTo" VerticalAlignment="Stretch" Width="173" ItemsSource="{Data:Binding  ElementName=root,Path=RefersToList}" />
+		<Controls:ListBox Controls:Grid.Row="1" Height="104" HorizontalAlignment="Left" Margin="465,22,0,0" x:Name="ReferedToBy" VerticalAlignment="Stretch" Width="173" ItemsSource="{Data:Binding  ElementName=root,Path=ReferedToByList}" />
+		<Controls:Label Content="RefersTo:" Controls:Grid.Row="1" Height="27" HorizontalAlignment="Left" Margin="643,0,0,0" Name="label1" VerticalAlignment="Top" Width="157" />
+		<Controls:Label Content="ReferedToBy:" Height="27" HorizontalAlignment="Left" Margin="465,0,0,0" Name="label2" VerticalAlignment="Top" Width="157" Controls:Grid.Row="1" />
+		<Controls:Label Content="Colours:" Height="27" HorizontalAlignment="Left" Margin="309,0,0,0" Name="label3" VerticalAlignment="Top" Width="157" Controls:Grid.Row="1" />
+		<Controls:Label Content="Layouts:" Controls:Grid.Row="1" Height="27" HorizontalAlignment="Left" Margin="146,0,0,0" Name="label4" VerticalAlignment="Top" Width="157" />
+		<Controls:Button Controls:Grid.Row="1" Content="Save As PNG|BMP|JPG" Height="30" HorizontalAlignment="Left" Margin="6,96,0,0" Name="printbtn" VerticalAlignment="Top" Width="135" Click="PrintbtnClick" />
+		<Controls:Button Controls:Grid.Row="1" Content="Print to XPS" Height="30" HorizontalAlignment="Left" Margin="5,67,0,0" Name="btnXPS" VerticalAlignment="Top" Width="135" Click="BtnXpsClick" />
+		<Controls:Button Content="ZoomTo!" Controls:Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="5,39,0,0" x:Name="btnZoom" VerticalAlignment="Top" Width="135" Click="BtnZoomClick" Visibility="Visible" />
+		<ListBox Height="104" HorizontalAlignment="Left" ItemsSource="{Binding ElementName=root, Path=ReferedToByList}"  Name="PathsBox" VerticalAlignment="Stretch" Width="173" Grid.Row="1" Margin="822,22,0,0" />
+		<Label Content="Paths:" Height="27" HorizontalAlignment="Left" Name="label5" VerticalAlignment="Top" Width="157" Grid.Row="1" Margin="822,0,0,0" />
+	</Controls:Grid>
+</UserControl>
